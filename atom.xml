@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://wiserfirst.github.com/wiserfirst/atom.xml" rel="self"/>
+  <link href="http://wiserfirst.github.com/wiserfirst/"/>
+  <updated>2013-02-04T18:03:14+08:00</updated>
+  <id>http://wiserfirst.github.com/wiserfirst/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
