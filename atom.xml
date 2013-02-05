@@ -1,16 +1,401 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Peaceful Revolution]]></title>
   <link href="http://wiserfirst.github.com/atom.xml" rel="self"/>
   <link href="http://wiserfirst.github.com/"/>
-  <updated>2013-02-04T18:55:18+08:00</updated>
+  <updated>2013-02-05T17:46:19+08:00</updated>
   <id>http://wiserfirst.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[wiser]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[hello world]]></title>
+    <link href="http://wiserfirst.github.com/blog/2013/02/05/hello-world/"/>
+    <updated>2013-02-05T14:39:00+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2013/02/05/hello-world</id>
+    <content type="html"><![CDATA[<p>Hello, this is a test post from Octopress.</p>
+
+<p>More test contents.</p>
+
+<figure class='code'><figcaption><span>First Program - hello.c </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include &quot;stdio.h&quot;</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Time to be Awesome - awesome.rb </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Awesome!&quot;</span> <span class="k">unless</span> <span class="n">lame</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using command line tool to update multiple text files via regular expression]]></title>
+    <link href="http://wiserfirst.github.com/blog/2013/02/02/using-command-line-tool-to-update-multiple-text-files-via-regular-expression/"/>
+    <updated>2013-02-02T23:49:42+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2013/02/02/using-command-line-tool-to-update-multiple-text-files-via-regular-expression</id>
+    <content type="html"><![CDATA[<p>I am trying to do this in Cygwin on windows, but I think it should work just fine on Linux. The steps are as listed below.</p>
+
+<p>Find the files needed to be updated (here I want to find all cshtml files containing a certain pattern in its content):
+<code>$ find . -name "*cshtml" -exec grep -l "old-pattern" {} \;</code></p>
+
+<p>Sometimes there are white spaces in filenames, so pipe the output to sed to provide valid filenames for later use:
+<code>$ sed -e 's/\s/\\ /g'</code></p>
+
+<p>Last, do the actual replacement by sed:
+<code>$ sed -i 's/old-pattern/new-pattern/g'</code></p>
+
+<p>The full command is
+`$ find . -name &#8220;*cshtml&#8221; -exec grep -l &#8220;old-pattern&#8221; {} \;</p>
+
+<pre><code>| sed -e 's/\s/\\ /g'
+| sed -i 's/old-pattern/new-pattern/g'`
+</code></pre>
+
+<p>Althouth step one may not seem necessary, it prevents accidentally changing files that doesn&#8217;t contain the target pattern.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[None]]></title>
+    <link href="http://wiserfirst.github.com/blog/2011/09/06/40/"/>
+    <updated>2011-09-06T02:09:19+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2011/09/06/40</id>
+    <content type="html"><![CDATA[<p>之前用的手机是Nokia，为了保存上面的通讯录，我按照<a href="http://www.allaboutsymbian.com/news/item/8922_Google_Sync_Beta_for_SyncML_S6.php">这里</a>的方法使用Google Sync将其同步到Google帐户。然后就可以在Gmail的通讯录当中访问了。换了iPhone之后自然要把通讯录从Google帐户同步过来。</p>
+
+<p>步骤如下：</p>
+
+<p>1 在设置&#8211;>邮件、通讯录、日历 中选择添加帐户</p>
+
+<p>2 Microsoft Exchange</p>
+
+<p>3 填入你的Google帐户，如下图（唯一需要注意的就是服务器填 m.google.com）<img src="http://wiserfirst.github.com/DOCUME%7E1/ADMINI%7E1/LOCALS%7E1/Temp/enhtmlclip/IMG_0091.png" alt="" /></p>
+
+<p>4 接着在该帐户的设置中，要确认邮件、通讯录和日历这三项的同步是否要打开，这个根据自己需要处理吧。当然了，要同步通讯录的话，通讯录这项一定要打开才行。</p>
+
+<p>5 邮件、通讯录、日历&#8211;>获取新数据 中打开推送（最好在有WIFI接入点时）</p>
+
+<p>这样设置完成以后，稍等一小会，再打开iPhone通讯录时，就会发现Gmail通讯录里的联系人了。</p>
+
+<p>到这里似乎就大功告成了，然而实际情况往往并不如意。比如我这里就出了个小问题：部分联系人一切正常；但是另一部分联系人里面没有电话号码，只是个空的联系人……经过对比iPhone通讯录和Gmail通讯录，我发现一个规律，即Gmail中的号码类型标签为&#8221;Other&#8221;的电话号码，iPhone上统统没有。</p>
+
+<p>第一反应是问Google，但是一番搜索并没有发现解决方案——似乎没有人碰到这个问题……</p>
+
+<p>那只能尝试着自己动手了。简单分析一下这个问题，应该是把号码标签类型从&#8221;Other&#8221;改成&#8221;Mobile&#8221;或者&#8221;Home&#8221;。登录到Gmail上手动改当然是可以了，不过偶的通讯录有200多条，一个个改太麻烦了。作为程序员，应该尝试自己写代码解决问题，Google应该有提供修改联系人的API。查一下果然有，就是这个<a href="http://code.google.com/intl/zh-CN/apis/contacts/docs/3.0/developers_guide.html">Google Contacts Data API</a>。Google提供Java、.NET及python等多种语言接口，由于正在自学python，就用它吧。到<a href="http://code.google.com/p/gdata-python-client/downloads/list">这里</a>下载<a href="http://code.google.com/p/gdata-python-client/">Python Client Library</a>。然后开始研究电话号码及其标签是使用什么数据结构保存的。结果如下：</p>
+
+<p>通讯录条目为class &#8216;gdata.contacts.data.ContactEntry&#8217;；</p>
+
+<p>其中的电话号码字段名为&#8221;phone_number&#8221;，它是一个list，每个电话号码为list中一项，类型是class &#8216;gdata.data.PhoneNumber&#8217;；</p>
+
+<p>PhoneNumber类型的rel字段是一个类似于&#8217;<a href="http://schemas.google.com/g/2005#other">http://schemas.google.com/g/2005#other</a>&#8216;的字符串，保存了号码标签；而是其text字段是真正的电话号码，如&#8221;13526541245&#8221;，但其类型还不是string，需要对其调用str()才能得到字符串。</p>
+
+<p>另外，经验证还发现：在Gmail的通讯录中，号码标签共有9种类型，以下六种可以正确同步到iOS设备的通讯录中，</p>
+
+<p>Gmail</p>
+
+<p>iOS</p>
+
+<p>Mobile</p>
+
+<p>移动电话</p>
+
+<p>Work</p>
+
+<p>工作</p>
+
+<p>Work Fax</p>
+
+<p>工作传真</p>
+
+<p>Home</p>
+
+<p>住宅</p>
+
+<p>Home Fax</p>
+
+<p>住宅传真</p>
+
+<p>Pager</p>
+
+<p>传呼</p>
+
+<p>另外3种类型（Google Voice, Main, Custom）不能同步到iOS设备的通讯录。注意这个Custom是用户自定义，可以输入任何字符串（一定长度以内），在Gmail通讯录都可以正确保存。使用Gsync同步Nokia手机通讯录到Gmail的时候，有些手机号的标签会是&#8221;Other&#8221;，也就是一种自定义类型。就是这个导致从Nokia手机同步过来的通讯录中有些联系人名字在但是号码却是空的。</p>
+
+<p>然后就开始写代码，逻辑无非就是：</p>
+
+<p>if 号码标签为Other :</p>
+
+<p>    if 手机号:</p>
+
+<p>        将号码标签改为Mobile</p>
+
+<p>    else:</p>
+
+<p>        将号码标签改为Work</p>
+
+<p>真正实现这个逻辑并没有花多少时间，在Google提供的sample代码里面很容易就改出来了；倒是找表示电话号码的字段名，以及表示号码标签的字段名，花了一些时间。因为Google所提供的库中，类的定义实在是有点复杂——至少对我这个没接触过的新手而言是这样。全部理清头绪以后，回过头想想其实整个过程并不困难，如果对Google的库有些熟悉，应该很快就能搞定的。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[文艺青年改变世界?]]></title>
+    <link href="http://wiserfirst.github.com/blog/2011/03/18/e69687e889bae99d92e5b9b4e694b9e58f98e4b896e7958c/"/>
+    <updated>2011-03-18T22:17:49+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2011/03/18/e69687e889bae99d92e5b9b4e694b9e58f98e4b896e7958c</id>
+    <content type="html"><![CDATA[<p>在豆瓣看到一篇雄文《<a href="http://www.douban.com/note/139963304/">文艺青年改变世界</a>》。文中举了扎坎伯格、比尔盖茨、Google创始人等的例子来证明“只会编程的人”不可能改变世界，我认为这个层面证明的还比较清楚；然而文末的结论却有些莫名其妙——“文艺青年改变世界”。
+经常有搞技术的会忽视技术以外的修养，而认为“只懂编程就够了”。这当然是不对的，作者在文中也通过举例说明了那些改变了世界的人除了编程技术过硬之外都有很好的技术以外的修养，比如古典语言、绘画等等；作者明显倾向于是这些技术以外的修养才使他们有了“远见卓识”，从而能够对世界有一些影响、有一些推动。那么能否就因此将扎坎伯格等人就称为“文艺青年”呢？我想不光是懂文艺的Hacker们，连那些真正只懂文艺的文艺青年也该出来抗议了。连作者自己都承认“编程是必备能力，是创造一件东西需要的基本能力”，那如何能得出“文艺青年改变世界”这么个结论？假如结论是想要通过技术改变世界，除了编程还要懂“写作、绘画、古希腊语”等文艺方面的东西，我想不会有多少人反对。
+作者的逻辑似乎是这样的：
+很多成功的Hacker都有很高的文艺素养=>只懂编程不够=>文艺足以改变世界。恩，好吧——“文艺青年改变世界”。
+好吧，我坦白，我不是文艺青年，我写作水平很烂的。我还是不试图改变世界了<sup>_^</sup></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用VPS做SSH代理]]></title>
+    <link href="http://wiserfirst.github.com/blog/2010/12/29/e4bdbfe794a8vpse5819asshe4bba3e79086/"/>
+    <updated>2010-12-29T22:50:37+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2010/12/29/e4bdbfe794a8vpse5819asshe4bba3e79086</id>
+    <content type="html"><![CDATA[<p>首先登录到VPS并切换到root帐号（也可以使用sudo命令），然后使用如下命令建立新帐户，专门用于SSH代理：</p>
+
+<blockquote><p>useradd -M -s /sbin/nologin -n username</p></blockquote>
+
+<p>然后为该用户设置密码:</p>
+
+<blockquote><p>passwd username</p></blockquote>
+
+<p>接着根据提示输入两遍这个用户的密码即可。（参考了这篇文章《<a href="http://www.zhukun.net/archives/4504">在VPS上建立最低权限的SSH帐号用于代理服务</a>》）
+若要删除这个用户，运行如下命令:</p>
+
+<blockquote><p>userdel username</p></blockquote>
+
+<p>为了保证用户名和密码的安全性，我使用了一个国外网站上的在线工具生成随机字符串作为用户名和密码，地址在<a href="http://www.pctools.com/guides/password/?length=12&amp;phonetic=on&amp;alpha=on&amp;mixedcase=on&amp;numeric=on&amp;punctuation=on&amp;nosimilar=on&amp;quantity=1&amp;generate=true#password_generator">这里</a>。可以指定包含字符的类别和串的长度，个人认为挺好用的，回头有时间自己写一个。
+密码设好以后，Server配置就完成了，接下来做Client配置。在Windows下可以使用Bitvise Tunnelier，点<a href="http://dl.bitvise.com/Tunnelier-Inst.exe">这里下载</a>，其配置实用参考了<a href="http://www.vpsmm.com/edu/ssh-sockt-5-fuck-g-f-w.html">这篇文章</a>。
+下载安装Tunnelier软件后，首先在Login页面中输入VPS地址及其SSH端口，以及刚刚设置的用户名和密码。在Options页面的On Login下取消选中Open Terminal和Open SFTP，这样使用这个帐户登录时就不会自动打开Terminal和SFTP窗口。其实这里即使不取消也是登录不上去的，因为这个帐户权限不够。最后在Service页面选中SOCKS/HTTP Proxy Forwarding下面的Enable，并在Listen Port中设置一个你想使用的端口号，如4567。这样本地代理的配置就完成了。
+想要通过这个代理上网只需要在浏览器中，设置代理地址为127.0.0.1:4567即可。当然如果你使用Firefox并且安装了Autoproxy插件，还可以根据网址无缝切换翻墙与否，十分方便。只需在Autoproxy插件的配置中将SSH -D方式后面的端口号改为4567，并选择使用SSH -D即可。关于详细的设置请自行Google之。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wordpress用户密码修改]]></title>
+    <link href="http://wiserfirst.github.com/blog/2010/12/23/wordpresse794a8e688b7e5af86e7a081e4bfaee694b9/"/>
+    <updated>2010-12-23T18:07:57+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2010/12/23/wordpresse794a8e688b7e5af86e7a081e4bfaee694b9</id>
+    <content type="html"><![CDATA[<p>首先参考这篇文章<a href="http://www.williamlong.info/archives/1978.html">《WordPress用户密码算法规则》</a>，可了解其密码设置保存的规则。 可以通过如下步骤进行密码修改：</p>
+
+<p>1 计算要设置密码的MD5值。 到<a href="http://www.joeswebtools.com/security/md5-hash-generator/">这里</a>，输入密码字符串，点击“Generate MD5”，得到密码的MD5值。例如要设密码为“Hello_world!”，计算出的MD5为“8522b5c3cab95bebdc2b35836207a902”</p>
+
+<p>2 使用phpMyAdmin登录MySQL数据库，查看Wordpress使用的数据库（这个是在安装LNMP时自己命名的）中存放users的表（通常是wp_users），在对应用户的那一行点击Edit，即那个铅笔按钮，然后将密码字段（我这里是user_pass）的值改为刚刚得到的MD5值，最后点击GO。</p>
+
+<p>这个操作相当于运行了如下的SQL语句：</p>
+
+<blockquote><p>UPDATE <code>your_dbname</code>.<code>wp_users</code> SET <code>user_pass</code> = &#8216;8522b5c3cab95bebdc2b35836207a902&#8217; WHERE <code>wp_users</code>.<code>ID</code> =1;</p></blockquote>
+
+<p>如果足够熟悉的话也可以自己写SQL语句来执行，对上面语句稍做修改：</p>
+
+<blockquote><p>UPDATE <code>your_dbname</code>.<code>wp_users</code> SET <code>user_pass</code> = &#8216;8522b5c3cab95bebdc2b35836207a902&#8217; WHERE <code>wp_users</code>.<code>user_login</code> =‘your_username’;</p></blockquote>
+
+<p>注意，其中的your_dbname和your_username要替换成你的数据库名和用户名。这样写的好处是不用去查用户名对应的ID。 到这里就已经完成了密码的修改，正如月光老师所说，我们写进去的是密码的MD5值，下次使用这个密码登录后，Wordpress会将其修改为更加安全的形式。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[历史上那些最愚蠢的话]]></title>
+    <link href="http://wiserfirst.github.com/blog/2010/12/09/e58e86e58fb2e4b88ae982a3e4ba9be69c80e6849ae8a0a2e79a84e8af9d/"/>
+    <updated>2010-12-09T02:28:04+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2010/12/09/e58e86e58fb2e4b88ae982a3e4ba9be69c80e6849ae8a0a2e79a84e8af9d</id>
+    <content type="html"><![CDATA[<p><a href="http://interstel.net/~jdpaul/stupidity.technology.html">SEVERAL DOZEN OF THE STUPIDEST THINGS EVER SAID</a></p>
+
+<p>历史上那些最愚蠢的话</p>
+
+<p>本文为翻译，并非原创。出处在此：http://interstel.net/~jdpaul/stupidity.technology.html</p>
+
+<p>&#8220;Computers in the future may weigh no more than 1.5 tons.&#8221; &#8211;Popular Mechanics, forecasting the relentless march of science, 1949</p>
+
+<p>“未来的计算机应该不会超过一点五吨重”——Popular Mechanics （译注：这应该是一个媒体），对科学不断进步的预测，1949</p>
+
+<p>&#8220;I think there is a world market for maybe five computers.&#8221; &#8211;Thomas Watson, Chairman of IBM, 1943</p>
+
+<p>“我想计算机的全球市场上怎么也得有五台计算机吧”——Thomas Watson, IBM主席，1943</p>
+
+<p>&#8220;I have traveled the length and breadth of this country and talked with the best people, and I can assure you that data processing is a fad that won&#8217;t last out the year.&#8221; &#8211;The editor in charge of business books for Prentice Hall, 1957</p>
+
+<p>“我到过这个国家很多地方，和最优秀的人聊过，我现在可以向你保证数据处理不会流行过今年的”——Prentice Hall商学类书籍的主编，1957</p>
+
+<p>&#8220;But what &#8230; is it good for?&#8221; &#8211;Engineer at the Advanced Computing Systems Division of IBM, 1968, commenting on the microchip.</p>
+
+<p>“但是这东西……有啥用啊？”——IBM高级计算系统部工程师，对微型芯片的评论，1968</p>
+
+<p>&#8220;There is no reason anyone would want a computer in their home.&#8221; &#8211;Ken Olson, president, chairman and founder of Digital Equipment Corp., 1977</p>
+
+<p>“没理由每个人家里都需要一台计算机的”——Ken Olson，DEC公司总裁、主席及创建人，1977</p>
+
+<p>&#8220;This &#8216;telephone&#8217; has too many shortcomings to be seriously considered as a means of communication. The device is inherently of no value to us.&#8221; &#8211;Western Union internal memo, 1876.</p>
+
+<p>“这个所谓‘电话’作为一种通讯工具有太多的缺点需要认真考虑。这种设备从本质上对我们来说没有任何价值”——Western Union内部备忘录，1876</p>
+
+<p>&#8220;The wireless music box has no imaginable commercial value. Who would pay for a message sent to nobody in particular?&#8221; &#8211;David Sarnoff&#8217;s associates in response to his urgings for investment in the radio in the 1920s.</p>
+
+<p>“这个无线音乐盒没有可想象的商业价值。谁会付钱去发一条没有特定受众的消息呢？”——David Sarnoff的同事对他力荐投资无线电广播的回应，上世纪二十年代</p>
+
+<p>&#8220;The concept is interesting and well-formed, but in order to earn better than a &#8216;C,&#8217; the idea must be feasible.&#8221; &#8211;A Yale University management professor in response to Fred Smith&#8217;s paper proposing reliable overnight delivery service. (Smith went on to found Federal Express Corp.)</p>
+
+<p>“这个观念很有趣，说明形式也不错，不过要想得到超过C的评价，想法必须是可实现的”——一位耶鲁大学管理学教授对Fred Smith提出可靠隔夜快递服务的评价。（Smith后来创建了联邦快递）</p>
+
+<p>&#8220;Who the hell wants to hear actors talk?&#8221; &#8211;H.M. Warner, Warner Brothers, 1927.</p>
+
+<p>“谁他妈想听演员说话？”——H.M. Warner，华纳兄弟，1927</p>
+
+<p>&#8220;I&#8217;m just glad it&#8217;ll be Clark Gable who&#8217;s falling on his face and not Gary Cooper.&#8221; &#8211;Gary Cooper on his decision not to take the leading role in &#8220;Gone With The Wind.&#8221;</p>
+
+<p>“我很高兴丢脸的是Clark Gable而不是Gary Cooper”——Gary Cooper对于他不领衔主演《乱世佳人》决定的评价</p>
+
+<p>&#8220;A cookie store is a bad idea. Besides, the market research reports say America likes crispy cookies, not soft and chewy cookies like you make.&#8221; &#8211;Response to Debbi Fields&#8217; idea of starting Mrs. Fields&#8217; Cookies.</p>
+
+<p>“饼干店是个坏主意。另外，市场研究表明美国人喜欢吃脆的饼干，而不是你做的那种软而且需要嚼的”——对于Debbi Fields创建Mrs. Fields&#8217; Cookies想法的回应</p>
+
+<p>&#8220;We don&#8217;t like their sound, and guitar music is on the way out.&#8221; &#8211;Decca Recording Co. rejecting the Beatles, 1962.</p>
+
+<p>“我们不喜欢他们的声音，并且吉他音乐也日渐式微”——Decca Recording Co.拒绝了甲壳虫乐队，1962</p>
+
+<p>&#8220;Heavier-than-air flying machines are impossible.&#8221; &#8211;Lord Kelvin, president, Royal Society, 1895.</p>
+
+<p>“比空气重的飞行器是不可能造出来的”——Lord Kelvin，Royal Society总裁，1895</p>
+
+<p>&#8220;If I had thought about it, I wouldn&#8217;t have done the experiment. The literature was full of examples that said you can&#8217;t do this.&#8221; &#8211;Spencer Silver on the work that led to the unique adhesives for 3-M &#8220;Post-It&#8221; Notepads.</p>
+
+<p>“如果我考虑过那些，我就不会做这试验了。文献资料上全是你为什么不能做这个的例子”——Spencer Silver对于3-M易事贴前期工作的评价</p>
+
+<p>&#8220;So we went to Atari and said, &#8216;Hey, we&#8217;ve got this amazing thing, even built with some of your parts, and what do you think about funding us? Or we&#8217;ll give it to you. We just want to do it. Pay our salary, we&#8217;ll come work for you.&#8217; And they said, &#8216;No.&#8217; So then we went to Hewlett-Packard, and they said, &#8216;Hey, we don&#8217;t need you. You haven&#8217;t got through college yet.&#8217;&#8221; &#8211;Apple Computer Inc. founder, Steve Jobs, on attempts to get Atari and H-P interested in his and Steve Wozniak&#8217;s personal computer.</p>
+
+<p>“我们去了Atari，说‘嘿，我们有这了不起的东东，而且还用了一些你们的零件，你们觉得给我们投资如何？或者我们把它给你们。我们只是想做这个。付我们薪水，我们给你们工作。’然后他们说‘不。’接着我们去了惠普，他们说‘嘿，我们不需要你们。你们连毕业都还没毕业呢。’”——苹果公司创建人Steve Jobs当初试图让Atari和惠普对他和Steve Wozniak的个人计算机感兴趣</p>
+
+<p>&#8220;Professor Goddard does not know the relation between action and reaction and the need to have something better than a vacuum against which to react. He seems to lack the basic knowledge ladled out daily in high schools.&#8221; &#8211;1921 New York Times editorial about Robert Goddard&#8217;s revolutionary rocket work.</p>
+
+<p>“Goddard教授不懂得作用与反作用之间的关系，他需要一个比试图从真空获取反作用更好的模型。他似乎缺乏高中所传授的基础知识。”——纽约时报对Robert Goddard在火箭上所作革命性工作的社论，1921</p>
+
+<p>&#8220;You want to have consistent and uniform muscle development across all of your muscles? It can&#8217;t be done. It&#8217;s just a fact of life. You just have to accept inconsistent muscle development as an unalterable condition of weight training.&#8221; &#8211;Response to Arthur Jones, who solved the &#8220;unsolvable&#8221; problem by inventing Nautilus.</p>
+
+<p>“你希望全身肌肉都能得到一贯和同等的锻炼？这是不可能的。这就是现实。你只能接受不协调的肌肉锻炼是重量训练中不可改变的条件。”——对Arthur Jones的回应，他后来发明了Nautilus健身器并解决了这个所谓“不可能”的问题。</p>
+
+<p>&#8220;Drill for oil? You mean drill into the ground to try and find oil? You&#8217;re crazy.&#8221; &#8211;Drillers who Edwin L. Drake tried to enlist to his project to drill for oil in 1859.</p>
+
+<p>“钻井探油？你是说在地上打井来试图找石油？你疯了。”——Edwin L. Drake试图劝说一些打井工加入他的钻井探油项目时得到的回应，1859</p>
+
+<p>&#8220;Stocks have reached what looks like a permanently high plateau.&#8221; &#8211;Irving Fisher, Professor of Economics, Yale University, 1929.</p>
+
+<p>“股市似乎已经到达了永久的高点”——Irving Fisher, 耶鲁大学经济学教授，1929</p>
+
+<p>&#8220;Airplanes are interesting toys but of no military value.&#8221; &#8211;Marechal Ferdinand Foch, Professor of Strategy, Ecole Superieure de Guerre.</p>
+
+<p>“飞机是很有趣的玩具，但是没有军事价值。”——Marechal Ferdinand Foch，战略教授？（译注：这机构名我也翻不出来……只知道是德国的、和军事有关的）</p>
+
+<p>&#8220;Everything that can be invented has been invented.&#8221; &#8211; Charles H. Duell, Commissioner, U.S. Office of Patents, 1899.</p>
+
+<p>“所有能发明的东西都已经被发明了。”——Charles H. Duell，美国专利局委员，1899</p>
+
+<p>&#8220;Louis Pasteur&#8217;s theory of germs is ridiculous fiction&#8221;. &#8211;Pierre Pachet, Professor of Physiology at Toulouse, 1872.</p>
+
+<p>“Louis Pasteur的病菌理论是无稽之谈。”——Pierre Pachet，图卢兹生理学教授</p>
+
+<p>&#8220;The abdomen, the chest, and the brain will forever be shut from the intrusion of the wise and humane surgeon&#8221;. &#8211;Sir John Eric Ericksen, British surgeon, appointed Surgeon- Extraordinary to Queen Victoria 1873.</p>
+
+<p>“腹腔，胸腔和颅腔将永远是明智和人道的外科医生的禁地。”——Sir John Eric Ericksen，英国医生，维多利亚女王指定医生，1873</p>
+
+<p>&#8220;640K ought to be enough for anybody.&#8221; &#8211; Bill Gates, 1981</p>
+
+<p>“640K应该对每个人都够了”——比尔盖茨，1981</p>
+
+<p>Many thanks to Jody Culham for sending me this (and to Celia Raia, who sent it to her).</p>
+
+<p>感谢Jody Culham向我发送这些（同时感谢发给她的Celia Raia）</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[寄语康康]]></title>
+    <link href="http://wiserfirst.github.com/blog/2010/09/20/e5af84e8afade5bab7e5bab7/"/>
+    <updated>2010-09-20T04:35:02+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2010/09/20/e5af84e8afade5bab7e5bab7</id>
+    <content type="html"><![CDATA[<p>希望你健康快乐的成长，一直能保持一颗童心，保持现在的天真与好奇，无论多大，爸爸都不愿意你变得老于事故、一副犬儒心态。有梦想，也相信自己可以实现梦想，愿意为自己的梦想去奋斗和追求。对自己负责，懂得如何为自己做出选择，并承担相应的责任或后果。尊重他人，尽量学会用双赢的思维考虑问题。乐观，知道该如何寻找快乐并且能够在这个世界与自己的内心之间找到平衡。不一定要有很多钱，但一定要能够自食其力。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[关于阿扁这个不靠谱的”理想主义者”]]></title>
+    <link href="http://wiserfirst.github.com/blog/2010/08/24/e585b3e4ba8ee998bfe68981e8bf99e4b8aae4b88de99da0e8b0b1e79a84e79086e683b3e4b8bbe4b989e88085-2/"/>
+    <updated>2010-08-24T22:14:47+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2010/08/24/e585b3e4ba8ee998bfe68981e8bf99e4b8aae4b88de99da0e8b0b1e79a84e79086e683b3e4b8bbe4b989e88085-2</id>
+    <content type="html"><![CDATA[<p>那天在推上看到有人提到龙应台说陈水扁他们，“这些所谓的“理想主义者”也都不可信”。阿扁因为家族弊案受审被羁押，现在无论在台湾还是大陆基本都是属于“过街老鼠，人人喊打”那一类（尽管在台湾还有阿扁的支持者在街头抗议他被羁押），但是关于他贪污弊案以及沦为阶下囚的报道看多了，我却越来越想说说阿扁的正面意义：
+1 他出身平民，也能当上总统，说明台湾是一个普通人也有机会和希望的地方。
+2 他从美丽岛事件的律师到后来加入民进党，在台湾社会由独裁到民主的转型中起过一定推动作用。这个应该是没什么问题，否则当年不会被看做作“理想主义者了”
+3 他作为前任总统不仅没有被以老同志的名义用纳税人的钱养起来能够因为弊案被起诉并且被判有罪本身就有重大的意义：这说明他自己也曾出过力推动的台湾民主制度不是摆设，连总统有问题都可以查，查的出。当然，这点对他自己而言确实有些反讽。
+4 下面说说他执政的八年，很多人都指责他的任期乏善可陈，这可能是事实；但是我同时也注意到以下的一些事实：他没有强行剥夺普通民众的土地，公司等各种财产；没有发动各种运动导致几千万人在和平社会非正常死亡；没有血腥镇压过对他本人公开抗议的普通民众；没有禁止媒体报道自己家族以及其他政府高官的所谓“负面消息”；没有为台湾网民免费提供防火墙服务。
+说了这么多阿扁的好，最后强调一下，说这些不是要给他犯下的罪做任何辩解，我也支持判他有罪，只要证据确凿〔事实似乎的确如此〕。我真正想说的是，阿扁这个人是否靠谱其实并不重要，重要的是台湾有一个靠谱的制度：能够让尽量靠谱的人当上他们的总统；即使不小心犯了错误弄出来个不靠谱的，还能把他选下去，并且审判清算他的罪恶。一个国家或者地区的最高领导人贪污腐败，弄出来像阿扁那样的家族弊案当然是让人很失望的事；但是反过来想想，一个国家的最高领导人永远都正确难道就真的是好事吗？</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Opinions about Mac, iPhone and other Apple products]]></title>
+    <link href="http://wiserfirst.github.com/blog/2010/08/02/opinions-about-mac-iphone-and-other-apple-products/"/>
+    <updated>2010-08-02T11:13:16+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2010/08/02/opinions-about-mac-iphone-and-other-apple-products</id>
+    <content type="html"><![CDATA[<p>Many geeks are using Macbook or iMac, and they are sharing their opinions about Apple products. That&#8217;s why I&#8217;ve decided to buy a Macbook too. Here is  a collection of views or feelings on Apple computer from different people, as well as some useful tips for using it.</p>
+
+<p>李笑来<a href="http://www.twitter.com/xiaolai">@xiaolai</a>：<a href="http://www.lixiaolai.com/apple">All About Apple</a></p>
+
+<p>徐宥<a href="http://www.twitter.com/mathena">@mathena</a>: <a href="http://blog.youxu.info/2010/02/28/why-mac-os-x-for-programmers/">开发人员为何应该使用 Mac OS X 兼 OS X 小史</a></p>
+
+<p>霍炬<a href="http://twitter.com/virushuo">@virushuo</a> ：<a href="http://blog.devep.net/virushuo/2006/04/06/apple-and-my-situation.html">这段时间在干什么,顺便说说苹果</a></p>
+
+<p>范凯<a href="http://twitter.com/robbinfan">@robbinfan</a> ：</p>
+
+<p><a href="http://robbin.javaeye.com/blog/429059">我的PIM之旅(1)  - Windows上遇到的问题</a></p>
+
+<p><a href="http://robbin.javaeye.com/blog/601408">我的PIM之旅(2) - 用Mac和iPhone来实现我的PIM</a></p>
+
+<p><a href="http://robbin.javaeye.com/blog/453186">我的PIM之旅(3) - PIM云应用</a></p>
+
+<p><a href="http://robbin.javaeye.com/blog/362445">为啥国外的开发人员都喜欢用Mac呢？</a></p>
+
+<p>郝培强<a href="http://twitter.com/tinyfool">@tinyfool</a>：<a href="http://tiny4.org/blog/2010/02/why-programmers-should-use-mac-os-x/">为什么我认为每个程序员都应该用Mac OS X？</a></p>
+
+<p>张琮翔<a href="http://twitter.com/vgod">@vgod</a>：<a href="http://blog.vgod.tw/2010/05/26/why-i-use-mac/">为什么我用Mac</a></p>
+
+<p>方块<a href="http://www.twitter.com/krzycube">@KrzyCube</a>：<a href="http://blog.krzycube.net/mac-attraction/">Mac诱惑</a></p>
+
+<p>阿禅<a href="http://www.twitter.com/jason5ng32">@jason5ng32</a>：
+<a href="http://www.kenengba.com/post/765.html">你是否真的需要iPhone?</a></p>
+
+<p><a href="http://www.kenengba.com/post/2934.html">Macbook Pro初体验</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello world!]]></title>
+    <link href="http://wiserfirst.github.com/blog/2010/07/02/hello-world/"/>
+    <updated>2010-07-02T09:56:51+08:00</updated>
+    <id>http://wiserfirst.github.com/blog/2010/07/02/hello-world</id>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://wordpress.com/">WordPress.com</a>. This is your first post. Edit or delete it and start blogging!</p>
+]]></content>
+  </entry>
   
 </feed>

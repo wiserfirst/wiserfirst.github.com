@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Wordpress用户密码修改 - Peaceful Revolution</title>
+  <meta name="author" content="wiser">
+
+  
+  <meta name="description" content="首先参考这篇文章《WordPress用户密码算法规则》，可了解其密码设置保存的规则。 可以通过如下步骤进行密码修改： 1 计算要设置密码的MD5值。 到这里，输入密码字符串，点击“Generate MD5”，得到密码的MD5值。例如要设密码为“Hello_world!”，计算出的MD5为“ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wiserfirst.github.com/blog/2010/12/23/wordpresse794a8e688b7e5af86e7a081e4bfaee694b9/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Peaceful Revolution" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Peaceful Revolution</a></h1>
+  
+    <h2>Failing to plan is planning to fail</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wiserfirst.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Wordpress用户密码修改</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-23T18:07:57+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>首先参考这篇文章<a href="http://www.williamlong.info/archives/1978.html">《WordPress用户密码算法规则》</a>，可了解其密码设置保存的规则。 可以通过如下步骤进行密码修改：</p>
+
+<p>1 计算要设置密码的MD5值。 到<a href="http://www.joeswebtools.com/security/md5-hash-generator/">这里</a>，输入密码字符串，点击“Generate MD5”，得到密码的MD5值。例如要设密码为“Hello_world!”，计算出的MD5为“8522b5c3cab95bebdc2b35836207a902”</p>
+
+<p>2 使用phpMyAdmin登录MySQL数据库，查看Wordpress使用的数据库（这个是在安装LNMP时自己命名的）中存放users的表（通常是wp_users），在对应用户的那一行点击Edit，即那个铅笔按钮，然后将密码字段（我这里是user_pass）的值改为刚刚得到的MD5值，最后点击GO。</p>
+
+<p>这个操作相当于运行了如下的SQL语句：</p>
+
+<blockquote><p>UPDATE <code>your_dbname</code>.<code>wp_users</code> SET <code>user_pass</code> = &#8216;8522b5c3cab95bebdc2b35836207a902&#8217; WHERE <code>wp_users</code>.<code>ID</code> =1;</p></blockquote>
+
+<p>如果足够熟悉的话也可以自己写SQL语句来执行，对上面语句稍做修改：</p>
+
+<blockquote><p>UPDATE <code>your_dbname</code>.<code>wp_users</code> SET <code>user_pass</code> = &#8216;8522b5c3cab95bebdc2b35836207a902&#8217; WHERE <code>wp_users</code>.<code>user_login</code> =‘your_username’;</p></blockquote>
+
+<p>注意，其中的your_dbname和your_username要替换成你的数据库名和用户名。这样写的好处是不用去查用户名对应的ID。 到这里就已经完成了密码的修改，正如月光老师所说，我们写进去的是密码的MD5值，下次使用这个密码登录后，Wordpress会将其修改为更加安全的形式。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">wiser</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-12-23T18:07:57+08:00" pubdate data-updated="true">Dec 23<span>rd</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/技术学习/'>技术学习</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://wiserfirst.github.com/blog/2010/12/23/wordpresse794a8e688b7e5af86e7a081e4bfaee694b9/" data-via="wiserfirst" data-counturl="http://wiserfirst.github.com/blog/2010/12/23/wordpresse794a8e688b7e5af86e7a081e4bfaee694b9/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/12/09/e58e86e58fb2e4b88ae982a3e4ba9be69c80e6849ae8a0a2e79a84e8af9d/" title="Previous Post: 历史上那些最愚蠢的话">&laquo; 历史上那些最愚蠢的话</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/12/29/e4bdbfe794a8vpse5819asshe4bba3e79086/" title="Next Post: 使用VPS做SSH代理">使用VPS做SSH代理 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/05/hello-world/">hello world</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/02/using-command-line-tool-to-update-multiple-text-files-via-regular-expression/">Using command line tool to update multiple text files via regular expression</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/09/06/40/">None</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/18/e69687e889bae99d92e5b9b4e694b9e58f98e4b896e7958c/">文艺青年改变世界?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/29/e4bdbfe794a8vpse5819asshe4bba3e79086/">使用VPS做SSH代理</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("wiserfirst", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/wiserfirst" class="twitter-follow-button" data-show-count="false">Follow @wiserfirst</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - wiser -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

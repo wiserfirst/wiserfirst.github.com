@@ -1,12 +1,70 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://wiserfirst.github.com/blog/2010/07/02/hello-world/</loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://wiserfirst.github.com/blog/2010/08/02/opinions-about-mac-iphone-and-other-apple-products/
+        </loc>
+        <lastmod>2013-02-05T17:43:44+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://wiserfirst.github.com/blog/2010/08/24/e585b3e4ba8ee998bfe68981e8bf99e4b8aae4b88de99da0e8b0b1e79a84e79086e683b3e4b8bbe4b989e88085-2/
+        </loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://wiserfirst.github.com/blog/2010/09/20/e5af84e8afade5bab7e5bab7/</loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://wiserfirst.github.com/blog/2010/12/09/e58e86e58fb2e4b88ae982a3e4ba9be69c80e6849ae8a0a2e79a84e8af9d/
+        </loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://wiserfirst.github.com/blog/2010/12/23/wordpresse794a8e688b7e5af86e7a081e4bfaee694b9/
+        </loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://wiserfirst.github.com/blog/2010/12/29/e4bdbfe794a8vpse5819asshe4bba3e79086/
+        </loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://wiserfirst.github.com/blog/2011/03/18/e69687e889bae99d92e5b9b4e694b9e58f98e4b896e7958c/
+        </loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://wiserfirst.github.com/blog/2011/09/06/40/</loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://wiserfirst.github.com/blog/2013/02/02/using-command-line-tool-to-update-multiple-text-files-via-regular-expression/
+        </loc>
+        <lastmod>2013-02-05T17:35:26+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://wiserfirst.github.com/blog/2013/02/05/hello-world/</loc>
+        <lastmod>2013-02-05T15:10:09+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://wiserfirst.github.com/blog/archives/</loc>
-        <lastmod>2013-02-04T18:53:52+08:00</lastmod>
+        <lastmod>2013-02-05T17:43:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://wiserfirst.github.com/</loc>
-        <lastmod>2013-02-04T18:53:52+08:00</lastmod>
+        <lastmod>2013-02-05T17:43:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://wiserfirst.github.com/robots.txt</loc>
